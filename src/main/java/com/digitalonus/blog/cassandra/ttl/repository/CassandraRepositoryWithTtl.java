@@ -14,5 +14,5 @@ public interface CassandraRepositoryWithTtl<T, ID> extends CassandraRepository<T
      * @param <S>    The type of the entity to insert
      * @return The Entity added
      */
-    <S extends T> S save(S entity, int ttl);
+    <S extends T> S insert(S entity, int ttl);
 }

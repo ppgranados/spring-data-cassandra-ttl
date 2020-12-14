@@ -16,7 +16,7 @@ public class CassandraRepositoryWithTtlImpl<T, ID>
         this.cassandraOperations = operations;
     }
 
-    @Override public <S extends T> S save(final S entity, final int ttl) {
+    @Override public <S extends T> S insert(final S entity, final int ttl) {
         final InsertOptions insertOptions = InsertOptions.builder().ttl(ttl).build();
         cassandraOperations.insert(entity, insertOptions);
         return entity;

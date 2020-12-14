@@ -43,7 +43,7 @@ public class FlashOfferRepositoryTest {
         flashOffer.setDiscount(1.50);
 
         // insert it with 2 seconds ttl
-        repository.save(flashOffer, 2);
+        repository.insert(flashOffer, 2);
         // verify it was inserted
         FlashOffer saved = repository.findByProductId("PRODUCT_ID");
         Assert.assertNotNull(saved);
